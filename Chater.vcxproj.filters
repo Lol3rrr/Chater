@@ -29,21 +29,6 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Packet-setID.cpp">
-      <Filter>Source Files\Packet</Filter>
-    </ClCompile>
-    <ClCompile Include="Packet-setHash.cpp">
-      <Filter>Source Files\Packet</Filter>
-    </ClCompile>
-    <ClCompile Include="Packet-setMessage.cpp">
-      <Filter>Source Files\Packet</Filter>
-    </ClCompile>
-    <ClCompile Include="Packet-createByMessage.cpp">
-      <Filter>Source Files\Packet</Filter>
-    </ClCompile>
-    <ClCompile Include="Packet-toString.cpp">
-      <Filter>Source Files\Packet</Filter>
-    </ClCompile>
     <ClCompile Include="Main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -54,6 +39,24 @@
       <Filter>Source Files\Server</Filter>
     </ClCompile>
     <ClCompile Include="Server-update.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-createByMessage.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-setHash.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-setID.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-setMessage.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-toString.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Server-keepUptoDate.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
   </ItemGroup>

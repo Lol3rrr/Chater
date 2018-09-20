@@ -161,6 +161,7 @@
     <ClCompile Include="Packet-setID.cpp" />
     <ClCompile Include="Packet-setMessage.cpp" />
     <ClCompile Include="Packet-toString.cpp" />
+    <ClCompile Include="Server-keepUptoDate.cpp" />
     <ClCompile Include="Server-send.cpp" />
     <ClCompile Include="Server-struct.cpp" />
     <ClCompile Include="Server-update.cpp" />

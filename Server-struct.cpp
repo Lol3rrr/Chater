@@ -14,7 +14,7 @@ Server::Server() {
 	hints.ai_protocol = IPPROTO_TCP;
 
 	// Resolve the server address and port
-	iResult = getaddrinfo("", "", &hints, &result);
+	iResult = getaddrinfo(ip, port, &hints, &result);
 	if (iResult != 0) {
 		printf("getaddrinfo failed with error: %d\n", iResult);
 		WSACleanup();
@@ -47,13 +47,12 @@ Server::Server() {
 		printf("Unable to connect to server!\n");
 		WSACleanup();
 	}
+	else {
+		printf("Connected to Server \n");
+	}
 
 }
 
 Server::~Server() {
-
-	// cleanup
-	closesocket(Socket);
-	WSACleanup();
 
 }

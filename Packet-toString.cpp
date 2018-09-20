@@ -1,4 +1,5 @@
 #include "Packet.h"
+#include <iostream>
 
 string Packet::toString() {
 	string result = "";
@@ -8,7 +9,7 @@ string Packet::toString() {
 
 	result += limiter;
 
-	result += this->id;
+	result += to_string(id);
 	result += spacer;
 
 	result += this->hash;
@@ -17,6 +18,13 @@ string Packet::toString() {
 	result += this->message;
 
 	result += limiter;
+
+	int totalLength = strlen(result.c_str());
+	if (totalLength < 1024) {
+		for (int i = 0; i < 1024 - totalLength; i++) {
+			result += "/";
+		}
+	}
 
 	return result;
 }

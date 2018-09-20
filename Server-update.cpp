@@ -2,38 +2,22 @@
 
 void Server::update() {
 
-	Packet nullPacket;
-	this->queue[0] = nullPacket;
-
 	while (true)
 	{
-		Packet p = this->queue[0];
+		Packet p;
 
-		if (p.id == nullPacket.id) {
-			char buffer[1024];
-			char bufferLen = 1024;
+		char* buffer = new char[1024];
+		char bufferLen = 1024;
 
-			int iResult = recv(Socket, buffer, bufferLen, 0);
+		int iResult = recv(Socket, buffer, 1024, 0);
 
-			Packet p = nullPacket;
-			p.createByMessage(buffer);
+		p.createByMessage(buffer);
 
-			if (p.id != nullPacket.id) {
-				cout << p.toString() << endl;
-			}
-		}
-		else {
-			string message = p.toString();
-			int iResult = send(Socket, message.c_str(), (int)strlen(message.c_str()), 0);
-			if (iResult == SOCKET_ERROR) {
-				printf("send failed with error: %d\n", WSAGetLastError());
-				closesocket(Socket);
-				WSACleanup();
-			}
-			this->queue[0] = nullPacket;
+		if (p.id == 1) {
+			cout << p.message << endl;
 		}
 
-		Sleep(100);
+		Sleep(10);
 	}
 
 }

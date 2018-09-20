@@ -1,4 +1,5 @@
 #include "Packet.h"
+#include <iostream>
 
 void Packet::createByMessage(char message[]) {
 	string temp(message);
@@ -11,7 +12,9 @@ void Packet::createByMessage(char message[]) {
 		int end = temp.find("\r\n", start);
 
 		string substr = temp.substr(start, end - start);
-		this->id = stoi(substr, nullptr);
+		if (isdigit(substr[0])) {
+			this->id = stoi(substr, nullptr);
+		}
 
 		start = end + 2;
 

@@ -30,13 +30,12 @@ public:
 
 	void sendMessage(string message);
 	void update();
+	void keepUptoDate();
 
 private:
 
-	Packet queue[1];
-
-	string ip = "";
-	string port = "";
+	PCSTR ip = "128.0.120.48";
+	PCSTR port = "31901";
 
 	SOCKET Socket = INVALID_SOCKET;
 	WSADATA wsaData;

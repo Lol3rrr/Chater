@@ -7,18 +7,18 @@
 Server server;
 
 thread serverThread;
+thread updateThread;
 
 int main() {
 
 	serverThread = thread(&Server::update, &server);
+	updateThread = thread(&Server::keepUptoDate, &server);
 
 	while (true) {
 		string t;
 		getline(cin, t);
 
 		server.sendMessage(t);
-
-		cout << "Message: " << t << endl;
 	}
 
 	return 0;
