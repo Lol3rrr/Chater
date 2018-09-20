@@ -15,6 +15,10 @@ void Server::update() {
 
 		if (p.id == 1) {
 			cout << p.message << endl;
+			cout << endl;
+		}
+		else if (p.id == 4) {
+			cout << p.message << endl;
 		}
 
 		Sleep(10);

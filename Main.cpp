@@ -17,6 +17,7 @@ int main() {
 	while (true) {
 		string t;
 		getline(cin, t);
+		cout << endl;
 
 		server.sendMessage(t);
 	}
