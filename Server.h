@@ -25,17 +25,15 @@ using namespace std;
 class Server
 {
 public:
-	Server();
+	Server(PCSTR port, PCSTR ip);
 	~Server();
 
+	void getChatRoom(string chatRoom, string list[2]);
 	void sendMessage(string message);
 	void update();
 	void keepUptoDate();
 
 private:
-
-	PCSTR ip = "128.0.120.48";
-	PCSTR port = "31901";
 
 	SOCKET Socket = INVALID_SOCKET;
 	WSADATA wsaData;

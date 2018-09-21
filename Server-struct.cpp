@@ -1,6 +1,6 @@
 #include "Server.h"
 
-Server::Server() {
+Server::Server(PCSTR port, PCSTR ip) {
 	
 	// Initialize Winsock
 	int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
