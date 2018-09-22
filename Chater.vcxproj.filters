@@ -59,5 +59,8 @@
     <ClCompile Include="Server-keepUptoDate.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
+    <ClCompile Include="Server.getChatRoom.cpp">
+      <Filter>Source Files\Server</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

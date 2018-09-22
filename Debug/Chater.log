@@ -1,6 +1,12 @@
-﻿  Server-struct.cpp
+﻿  Main.cpp
+  Server-keepUptoDate.cpp
+  Server-send.cpp
+  Server-struct.cpp
   Server-update.cpp
-d:\datein\programmieren\c++\chater\chater\server-update.cpp(12): warning C4305: 'initializing': truncation from 'int' to 'char'
-d:\datein\programmieren\c++\chater\chater\server-update.cpp(12): warning C4309: 'initializing': truncation of constant value
+d:\datein\programmieren\c++\chater\server-update.cpp(10): warning C4305: 'initializing': truncation from 'int' to 'char'
+d:\datein\programmieren\c++\chater\server-update.cpp(10): warning C4309: 'initializing': truncation of constant value
+  Server.getChatRoom.cpp
+d:\datein\programmieren\c++\chater\server.getchatroom.cpp(22): warning C4305: 'initializing': truncation from 'int' to 'char'
+d:\datein\programmieren\c++\chater\server.getchatroom.cpp(22): warning C4309: 'initializing': truncation of constant value
   Generating Code...
   Chater.vcxproj -> D:\Datein\Programmieren\C++\Chater\Debug\Chater.exe
