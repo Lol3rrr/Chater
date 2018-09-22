@@ -10,27 +10,31 @@ thread serverThread;
 thread updateThread;
 
 int main() {
+	string list[3];
 
-	string list[2];
+	cout << "Which Room would you like to connect to?" << endl;
 
 	string t;
 	getline(cin, t);
 
 	s.getChatRoom(t, list);
 
-	cout << "Connect to: " << list[0] << " on Port: " << list[1] << endl;
+	if (list[2] != "error") {
+		Server server((PCSTR)list[1].c_str(), (PCSTR)list[0].c_str());
 
-	Server server((PCSTR) list[1].c_str(), (PCSTR)list[0].c_str());
+		serverThread = thread(&Server::update, &server);
+		updateThread = thread(&Server::keepUptoDate, &server);
 
-	serverThread = thread(&Server::update, &server);
-	updateThread = thread(&Server::keepUptoDate, &server);
+		while (true) {
+			string t;
+			getline(cin, t);
+			cout << endl;
 
-	while (true) {
-		string t;
-		getline(cin, t);
-		cout << endl;
-
-		server.sendMessage(t);
+			server.sendMessage(t);
+		}
+	}
+	else {
+		cout << "An error occured while connection to the Room" << endl;
 	}
 
 	return 0;

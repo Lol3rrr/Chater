@@ -1,6 +1,6 @@
 #include "Server.h"
 
-void Server::getChatRoom(string chatRoom, string list[2]) {
+void Server::getChatRoom(string chatRoom, string list[3]) {
 
 	Packet messageP;
 
@@ -27,10 +27,18 @@ void Server::getChatRoom(string chatRoom, string list[2]) {
 	p.createByMessage(buffer);
 
 	string rMessage = p.message;
-	string ip = rMessage.substr(0, rMessage.find("::"));
-	string port = rMessage.substr(rMessage.find("::") + 2, 5);
+	
+	int spacerPos = rMessage.find("::");
+	
+	if (spacerPos != string::npos) {
+		string ip = rMessage.substr(0, spacerPos);
+		string port = rMessage.substr(spacerPos + 2, 5);
 
-	list[0] = ip;
-	list[1] = port;
+		list[0] = ip;
+		list[1] = port;
+	}
+	else {
+		list[2] = "error";
+	}
 
 }

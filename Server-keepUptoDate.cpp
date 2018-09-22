@@ -16,15 +16,11 @@ void Server::keepUptoDate() {
 		if (sent == SOCKET_ERROR) {
 			failed += 1;
 
-			cout << "Sent: " << sent << endl;
-
-
-
 			// Create a SOCKET for connecting to server
 			Socket = socket(ptr->ai_family, ptr->ai_socktype,
 				ptr->ai_protocol);
 			if (Socket == INVALID_SOCKET) {
-				//printf("socket failed with error: %ld\n", WSAGetLastError());
+				printf("socket failed with error: %ld\n", WSAGetLastError());
 				WSACleanup();
 			}
 
