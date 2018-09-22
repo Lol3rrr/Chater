@@ -12,12 +12,7 @@ thread updateThread;
 int main() {
 	string list[3];
 
-	cout << "Which Room would you like to connect to?" << endl;
-
-	string t;
-	getline(cin, t);
-
-	s.getChatRoom(t, list);
+	s.getChatRoom(list);
 
 	if (list[2] != "error") {
 		Server server((PCSTR)list[1].c_str(), (PCSTR)list[0].c_str());
