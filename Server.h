@@ -28,7 +28,7 @@ public:
 	Server(PCSTR port, PCSTR ip);
 	~Server();
 
-	void getChatRoom(string chatRoom, string list[3]);
+	void getChatRoom(string list[3]);
 	void sendMessage(string message);
 	void update();
 	void keepUptoDate();

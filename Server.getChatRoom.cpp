@@ -1,13 +1,32 @@
 #include "Server.h"
 
-void Server::getChatRoom(string chatRoom, string list[3]) {
+void Server::getChatRoom(string list[3]) {
+
+	char roomBuffer[1024];
+	int iReceive = recv(Socket, roomBuffer, 1024, 0);
+
+	Packet roomPacket;
+	roomPacket.createByMessage(roomBuffer);
+
+	string roomMessage = roomPacket.message;
+	while (roomMessage.find("\n") != string::npos) {
+		int lineEnd = roomMessage.find("\n");
+
+		cout << roomMessage.substr(0, lineEnd) << endl;
+
+		roomMessage = roomMessage.substr(lineEnd + 1);
+	}
+
+	cout << "Which Room would you like to connect to?" << endl;
+
+	string chatRoom;
+	getline(cin, chatRoom);
 
 	Packet messageP;
-
 	messageP.setID(0);
 	string hash = "";
 	messageP.setHash(hash);
-	string roomMessage = "Room:" + chatRoom + ";";
+	roomMessage = "Room:" + chatRoom + ";";
 	messageP.setMessage(roomMessage);
 
 	string messageStr = messageP.toString();
@@ -21,7 +40,7 @@ void Server::getChatRoom(string chatRoom, string list[3]) {
 	char buffer[1024];
 	char bufferLength = 1024;
 
-	int iReceive = recv(Socket, buffer, 1024, 0);
+	iReceive = recv(Socket, buffer, 1024, 0);
 
 	Packet p;
 	p.createByMessage(buffer);
@@ -40,5 +59,5 @@ void Server::getChatRoom(string chatRoom, string list[3]) {
 	else {
 		list[2] = "error";
 	}
-
+	
 }
