@@ -18,7 +18,6 @@ int main() {
 		Server server((PCSTR)list[1].c_str(), (PCSTR)list[0].c_str());
 
 		serverThread = thread(&Server::update, &server);
-		updateThread = thread(&Server::keepUptoDate, &server);
 
 		while (true) {
 			string t;

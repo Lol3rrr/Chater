@@ -19,12 +19,18 @@
     <Filter Include="Source Files\Server">
       <UniqueIdentifier>{d18eb1f4-fdfe-4f73-a890-4e37adf7f31c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\General">
+      <UniqueIdentifier>{22a93ea2-2458-4fee-9b90-19dcc90ff711}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Packet.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Server.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="General.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -56,10 +62,10 @@
     <ClCompile Include="Packet-toString.cpp">
       <Filter>Source Files\Packet</Filter>
     </ClCompile>
-    <ClCompile Include="Server-keepUptoDate.cpp">
+    <ClCompile Include="Server.getChatRoom.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
-    <ClCompile Include="Server.getChatRoom.cpp">
+    <ClCompile Include="Server-reconnect.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
   </ItemGroup>

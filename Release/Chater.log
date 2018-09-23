@@ -1,10 +1,16 @@
 ﻿  Main.cpp
+  Server-reconnect.cpp
+  Server-send.cpp
+  Server-struct.cpp
   Server-update.cpp
-d:\datein\programmieren\c++\chater\chater\server-update.cpp(10): warning C4305: 'initializing': truncation from 'int' to 'char'
-d:\datein\programmieren\c++\chater\chater\server-update.cpp(10): warning C4309: 'initializing': truncation of constant value
+d:\datein\programmieren\c++\chater\server-update.cpp(10): warning C4305: 'initializing': truncation from 'int' to 'char'
+d:\datein\programmieren\c++\chater\server-update.cpp(10): warning C4309: 'initializing': truncation of constant value
+  Server.getChatRoom.cpp
+d:\datein\programmieren\c++\chater\server.getchatroom.cpp(45): warning C4305: 'initializing': truncation from 'int' to 'char'
+d:\datein\programmieren\c++\chater\server.getchatroom.cpp(45): warning C4309: 'initializing': truncation of constant value
   Generating code
-  5 of 233 functions ( 2.1%) were compiled, the rest were copied from previous compilation.
+  3 of 246 functions ( 1.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    1 functions had inline decision re-evaluated but remain unchanged
+    13 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   Chater.vcxproj -> D:\Datein\Programmieren\C++\Chater\Release\Chater.exe
