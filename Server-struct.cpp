@@ -1,7 +1,7 @@
 #include "Server.h"
 
 Server::Server(PCSTR port, PCSTR ip) {
-	
+
 	// Initialize Winsock
 	int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
 	if (iResult != 0) {
@@ -50,7 +50,6 @@ Server::Server(PCSTR port, PCSTR ip) {
 	else {
 		printf("Connected to Server \n");
 	}
-
 }
 
 Server::~Server() {
