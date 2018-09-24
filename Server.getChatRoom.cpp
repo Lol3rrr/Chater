@@ -32,29 +32,37 @@ void Server::getChatRoom(string list[3]) {
 	string messageStr = messageP.toString();
 	int iResult = send(Socket, messageStr.c_str(), 1024, 0);
 	if (iResult == SOCKET_ERROR) {
-		printf("send failed with error: %d\n", WSAGetLastError());
-		closesocket(Socket);
-		WSACleanup();
+		if (reconnect(3)) {
+			iResult = send(Socket, messageStr.c_str(), 1024, 0);
+		}
+		else {
+			cout << "Failed to reconnect" << endl;
+		}
 	}
 
-	char buffer[1024];
-	char bufferLength = 1024;
+	if (iResult != SOCKET_ERROR) {
+		char buffer[1024];
+		char bufferLength = 1024;
 
-	iReceive = recv(Socket, buffer, 1024, 0);
+		iReceive = recv(Socket, buffer, 1024, 0);
 
-	Packet p;
-	p.createByMessage(buffer);
+		Packet p;
+		p.createByMessage(buffer);
 
-	string rMessage = p.message;
-	
-	int spacerPos = rMessage.find("::");
-	
-	if (spacerPos != string::npos) {
-		string ip = rMessage.substr(0, spacerPos);
-		string port = rMessage.substr(spacerPos + 2, 5);
+		string rMessage = p.message;
 
-		list[0] = ip;
-		list[1] = port;
+		int spacerPos = rMessage.find("::");
+
+		if (spacerPos != string::npos) {
+			string ip = rMessage.substr(0, spacerPos);
+			string port = rMessage.substr(spacerPos + 2, 5);
+
+			list[0] = ip;
+			list[1] = port;
+		}
+		else {
+			list[2] = "error";
+		}
 	}
 	else {
 		list[2] = "error";

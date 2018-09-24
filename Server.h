@@ -31,9 +31,13 @@ public:
 	void getChatRoom(string list[3]);
 	void sendMessage(string message);
 	void update();
-	void keepUptoDate();
+
+	bool reconnect(int tries);
 
 private:
+
+	PCSTR ip;
+	PCSTR port;
 
 	SOCKET Socket = INVALID_SOCKET;
 	WSADATA wsaData;

@@ -1,6 +1,9 @@
 #include "Server.h"
 
-Server::Server(PCSTR port, PCSTR ip) {
+Server::Server(PCSTR nport, PCSTR nip) {
+	
+	port = nport;
+	ip = nip;
 
 	// Initialize Winsock
 	int iResult = WSAStartup(MAKEWORD(2, 2), &wsaData);
@@ -20,32 +23,35 @@ Server::Server(PCSTR port, PCSTR ip) {
 		WSACleanup();
 	}
 
-	// Attempt to connect to an address until one succeeds
-	for (ptr = result; ptr != NULL; ptr = ptr->ai_next) {
+	char testBuffer[1];
+	testBuffer[0] = 'a';
+	int testResult = -1;
 
-		// Create a SOCKET for connecting to server
-		Socket = socket(ptr->ai_family, ptr->ai_socktype,
-			ptr->ai_protocol);
-		if (Socket == INVALID_SOCKET) {
-			printf("socket failed with error: %ld\n", WSAGetLastError());
-			WSACleanup();
-		}
+	ptr = result;
 
-		// Connect to server.
-		iResult = connect(Socket, ptr->ai_addr, (int)ptr->ai_addrlen);
-		if (iResult == SOCKET_ERROR) {
-			closesocket(Socket);
-			Socket = INVALID_SOCKET;
-			continue;
-		}
-		break;
+	// Create a SOCKET for connecting to server
+	Socket = socket(ptr->ai_family, ptr->ai_socktype,
+		ptr->ai_protocol);
+	if (Socket == INVALID_SOCKET) {
+		printf("socket failed with error: %ld\n", WSAGetLastError());
+		WSACleanup();
+	}
+
+	// Connect to server.
+	iResult = connect(Socket, ptr->ai_addr, (int)ptr->ai_addrlen);
+	if (iResult == SOCKET_ERROR) {
+		closesocket(Socket);
+		Socket = INVALID_SOCKET;
 	}
 
 	freeaddrinfo(result);
 
-	if (Socket == INVALID_SOCKET) {
+	testResult = send(Socket, testBuffer, 0, 0);
+
+	if (testResult == -1) {
 		printf("Unable to connect to server!\n");
-		WSACleanup();
+		
+		reconnect(5);
 	}
 	else {
 		printf("Connected to Server \n");

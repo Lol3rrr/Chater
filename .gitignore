@@ -16,6 +16,15 @@
 *.dylib
 *.dll
 
+.suo
+.db
+.ipch
+.log
+.pdb
+.idb
+.ilk
+.tlog
+
 # Fortran module files
 *.mod
 *.smod
