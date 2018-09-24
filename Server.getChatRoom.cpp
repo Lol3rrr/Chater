@@ -29,11 +29,10 @@ void Server::getChatRoom(string list[3]) {
 	roomMessage = "Room:" + chatRoom + ";";
 	messageP.setMessage(roomMessage);
 
-	string messageStr = messageP.toString();
-	int iResult = send(Socket, messageStr.c_str(), 1024, 0);
+	int iResult = messageP.sendPacket(Socket);
 	if (iResult == SOCKET_ERROR) {
 		if (reconnect(3)) {
-			iResult = send(Socket, messageStr.c_str(), 1024, 0);
+			messageP.sendPacket(Socket);
 		}
 		else {
 			cout << "Failed to reconnect" << endl;
