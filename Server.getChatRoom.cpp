@@ -2,11 +2,7 @@
 
 void Server::getChatRoom(string list[3]) {
 
-	char roomBuffer[1024];
-	int iReceive = recv(Socket, roomBuffer, 1024, 0);
-
-	Packet roomPacket;
-	roomPacket.createByMessage(roomBuffer);
+	Packet roomPacket = Packet::receivePacket(Socket);
 
 	string roomMessage = roomPacket.message;
 	while (roomMessage.find("\n") != string::npos) {
@@ -40,14 +36,8 @@ void Server::getChatRoom(string list[3]) {
 	}
 
 	if (iResult != SOCKET_ERROR) {
-		char buffer[1024];
-		char bufferLength = 1024;
 
-		iReceive = recv(Socket, buffer, 1024, 0);
-
-		Packet p;
-		p.createByMessage(buffer);
-
+		Packet p = Packet::receivePacket(Socket);
 		string rMessage = p.message;
 
 		int spacerPos = rMessage.find("::");

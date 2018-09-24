@@ -26,6 +26,7 @@ public:
 	void setMessage(string nMessage);
 	void createByMessage(char hMessage[]);
 
+	static Packet receivePacket(SOCKET socket);
 	int sendPacket(SOCKET socket);
 
 	string toString();
