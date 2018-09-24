@@ -1,4 +1,0 @@
-﻿  Server.getChatRoom.cpp
-d:\datein\programmieren\c++\chater\server.getchatroom.cpp(41): warning C4305: 'initializing': truncation from 'int' to 'char'
-d:\datein\programmieren\c++\chater\server.getchatroom.cpp(41): warning C4309: 'initializing': truncation of constant value
-  Chater.vcxproj -> D:\Datein\Programmieren\C++\Chater\Debug\Chater.exe
