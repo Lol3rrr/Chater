@@ -56,7 +56,6 @@ Server::Server(PCSTR nport, PCSTR nip) {
 	else {
 		printf("Connected to Server \n");
 	}
-
 }
 
 Server::~Server() {
