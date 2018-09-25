@@ -1,0 +1,27 @@
+﻿  Main.cpp
+d:\datein\programmieren\c++\chater\main.cpp(36): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Packet-createByMessage.cpp
+d:\datein\programmieren\c++\chater\packet-createbymessage.cpp(36): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Packet-receivePacket.cpp
+d:\datein\programmieren\c++\chater\packet-receivepacket.cpp(13): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Packet-sendPacket.cpp
+d:\datein\programmieren\c++\chater\packet-sendpacket.cpp(11): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Packet-setHash.cpp
+d:\datein\programmieren\c++\chater\packet-sethash.cpp(8): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Packet-setID.cpp
+d:\datein\programmieren\c++\chater\packet-setid.cpp(8): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Packet-setMessage.cpp
+d:\datein\programmieren\c++\chater\packet-setmessage.cpp(8): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Packet-toString.cpp
+d:\datein\programmieren\c++\chater\packet-tostring.cpp(31): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Server-reconnect.cpp
+d:\datein\programmieren\c++\chater\server-reconnect.cpp(59): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Server-send.cpp
+d:\datein\programmieren\c++\chater\server-send.cpp(19): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Server-struct.cpp
+d:\datein\programmieren\c++\chater\server-struct.cpp(64): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Server-update.cpp
+d:\datein\programmieren\c++\chater\server-update.cpp(21): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Server.getChatRoom.cpp
+d:\datein\programmieren\c++\chater\server.getchatroom.cpp(61): fatal error C1010: unexpected end of file while looking for precompiled header. Did you forget to add '#include ""' to your source?
+  Generating Code...

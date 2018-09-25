@@ -8,5 +8,7 @@ Packet Packet::receivePacket(SOCKET socket) {
 
 	packet.createByMessage(buffer);
 
+	packet.decrypt();
+
 	return packet;
 }

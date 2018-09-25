@@ -1,0 +1,7 @@
+﻿  Packet-decrypt.cpp
+d:\datein\programmieren\c++\chater\packet-decrypt.cpp(7): warning C4018: '<': signed/unsigned mismatch
+  Packet-encrypt.cpp
+d:\datein\programmieren\c++\chater\packet-encrypt.cpp(7): warning C4018: '<': signed/unsigned mismatch
+  Server-send.cpp
+  Generating Code...
+  Chater.vcxproj -> D:\Datein\Programmieren\C++\Chater\Debug\Chater.exe
