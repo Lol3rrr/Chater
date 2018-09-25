@@ -99,7 +99,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
@@ -133,7 +133,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>MaxSpeed</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
@@ -158,6 +158,10 @@
   <ItemGroup>
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Packet-createByMessage.cpp" />
+    <ClCompile Include="Packet-decrypt.cpp" />
+    <ClCompile Include="Packet-encrypt.cpp" />
+    <ClCompile Include="Packet-receivePacket.cpp" />
+    <ClCompile Include="Packet-sendPacket.cpp" />
     <ClCompile Include="Packet-setHash.cpp" />
     <ClCompile Include="Packet-setID.cpp" />
     <ClCompile Include="Packet-setMessage.cpp" />

@@ -29,6 +29,9 @@ public:
 	static Packet receivePacket(SOCKET socket);
 	int sendPacket(SOCKET socket);
 
+	void encrypt();
+	void decrypt();
+
 	string toString();
 
 	int id;
@@ -36,5 +39,7 @@ public:
 	string message;
 
 private:
+
+	int maxEncryptOffset = 16;
 
 };

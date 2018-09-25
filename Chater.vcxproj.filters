@@ -68,5 +68,17 @@
     <ClCompile Include="Server-reconnect.cpp">
       <Filter>Source Files\Server</Filter>
     </ClCompile>
+    <ClCompile Include="Packet-sendPacket.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-receivePacket.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-encrypt.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
+    <ClCompile Include="Packet-decrypt.cpp">
+      <Filter>Source Files\Packet</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
